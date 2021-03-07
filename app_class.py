@@ -1,3 +1,4 @@
+# App class representing parameters to be scraped for an app.
 class App:
     def __init__(self, soup):
         self.Age = soup.select_one('#roundup_infobox_age .data').getText()

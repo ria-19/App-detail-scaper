@@ -2,9 +2,10 @@
 # scrape_app.py - Takes app name and provides age, overall ranking, global rank ,
 # description and screenshots of that app.
 
-
+# import modules
 import requests, webbrowser, bs4, sys
 
+# import App class
 from app_class import App
 
 #Takes app name as argument dynamically from user
