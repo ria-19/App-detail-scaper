@@ -3,19 +3,14 @@
 # description and screenshots of that app.
 
 # import modules
-import requests, webbrowser, bs4, sys
+import requests, webbrowser, bs4, sys, json
 
-<<<<<<< HEAD
 # import App class
-=======
-import requests, webbrowser, bs4, sys
-
->>>>>>> 6ccd42a2dce44bdd8c35fcb727839fc690b5c145
 from app_class import App
 
 #Takes app name as argument dynamically from user
-app_name = ' '.join(sys.argv[1: ])
-
+# app_name = ' '.join(sys.argv[1: ])
+app_name = 'Minecraft'
 
 #Requests for app page
 res = requests.get("https://www.apptrace.com/app?query=" + app_name)
@@ -44,8 +39,13 @@ content = bs4.BeautifulSoup(res.text, 'html.parser')
 # Scrapes information about required parameters.
 app = App(content)
 
-#Prints to the console
-print(app.__dict__)
+#Converts to json format
+jsonStr = json.dumps(app.__dict__)
+
+#Outputs to console
+print(jsonStr)
+
+
 
 
 
