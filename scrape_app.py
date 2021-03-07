@@ -44,16 +44,6 @@ print(app.__dict__)
 
 
 
-# ageElem = appSoup.select('#roundup_infobox_age .data')[0]
-# overallRatingsElem = appSoup.select('#roundup_infobox_rating .data')[0]
-# globalRankElem = appSoup.select('#roundup_infobox_ranking .data')[0]
-# descriptionElem = appSoup.select('div[itemprop="description')[0]
-# screenshotsElem = appSoup.select('img[class="primary_screenshots"]')
-# urls_Elems = []
-# for i in screenshotsElem:
-#     src = i.get('src')
-#     urls_Elems.append(src)
-    
 
 
 
