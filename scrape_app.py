@@ -3,15 +3,29 @@
 # description and screenshots of that app.
 
 
-import requests, webbrowser, bs4
+import requests, webbrowser, bs4, sys
 
 from app_class import App
 
-# TODO: takes app name as input dynamically from user
-# app_name = input("App to be searched: ")
+#Takes app name as argument dynamically from user
+app_name = ' '.join(sys.argv[1: ])
+
+
+#Requests for app page
+res = requests.get("https://www.apptrace.com/app?query=" + app_name)
+try:
+    res.raise_for_status()
+except Exception as exc:
+    print("ERROR!")
+
+#Beautiful soup object
+soup = bs4.BeautifulSoup(res.text, 'html.parser')
+
+#Scrapes out the redirected link
+linkElem = soup.select_one('div .link a').get('href')
 
 # Searches for app asked by user and download the page.
-res = requests.get('https://www.apptrace.com/app/363590051')
+res = requests.get('https://www.apptrace.com' + linkElem)
 try:
     res.raise_for_status()
 except Exception as exc:

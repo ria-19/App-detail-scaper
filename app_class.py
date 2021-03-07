@@ -7,5 +7,6 @@ class App:
         sElem = soup.select('img[class="primary_screenshots"]')
         self.Urls = [ i.get('src') for i in sElem]
         
+        
 
        
