@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6ccd42a2dce44bdd8c35fcb727839fc690b5c145
 [[source]]
 url = "https://pypi.org/simple"
 verify_ssl = true

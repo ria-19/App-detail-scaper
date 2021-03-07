@@ -5,7 +5,12 @@
 # import modules
 import requests, webbrowser, bs4, sys
 
+<<<<<<< HEAD
 # import App class
+=======
+import requests, webbrowser, bs4, sys
+
+>>>>>>> 6ccd42a2dce44bdd8c35fcb727839fc690b5c145
 from app_class import App
 
 #Takes app name as argument dynamically from user
