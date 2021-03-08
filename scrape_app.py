@@ -9,8 +9,8 @@ import requests, webbrowser, bs4, sys, json
 from app_class import App
 
 #Takes app name as argument dynamically from user
-# app_name = ' '.join(sys.argv[1: ])
-app_name = 'Minecraft'
+app_name = ' '.join(sys.argv[1: ])
+# app_name = 'Minecraft' chekcing
 
 #Requests for app page
 res = requests.get("https://www.apptrace.com/app?query=" + app_name)
@@ -27,7 +27,7 @@ linkElem = soup.select_one('div .link a')
 if linkElem:
     linkElemhref = soup.select_one('div .link a').get('href')
 else:
-    print("No matching app found for this name.")
+    print("Sorry, there are no Apps matching your search criteria")
 
 # Searches for app asked by user and download the page.
 res = requests.get('https://www.apptrace.com' + linkElemhref)
