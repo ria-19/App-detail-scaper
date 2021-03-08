@@ -22,11 +22,15 @@ except Exception as exc:
 #Beautiful soup object
 soup = bs4.BeautifulSoup(res.text, 'html.parser')
 
-#Scrapes out the redirected link
-linkElem = soup.select_one('div .link a').get('href')
+#Check if matching app found and then scrapes out the redirected link
+linkElem = soup.select_one('div .link a')
+if linkElem:
+    linkElemhref = soup.select_one('div .link a').get('href')
+else:
+    print("No matching app found for this name.")
 
 # Searches for app asked by user and download the page.
-res = requests.get('https://www.apptrace.com' + linkElem)
+res = requests.get('https://www.apptrace.com' + linkElemhref)
 try:
     res.raise_for_status()
 except Exception as exc:
